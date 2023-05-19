@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+a{
+    color: #fff;
+}
+}
+body{
+  background-color: #cdd1e0;
+  // background-color: #191929;
+}
+
+main {
+
+  width: 100%;
+  height: 100%;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: #fff;
+    .card-item {
+      box-shadow: 1px 1px 18px 0px #837f7f;
+      border: none;
+      padding: 20px;
+      width: 350px;
+      height: 600px;
+      border-radius: 20px;
+      background-image: url(../../../images/1a443eb02586eba402068c7b2ce08240.jpg);
+      background-position: center;
+      background-size: cover;
+      .card-nav {
+        i {
+          color: #fff;
+        }
+        .name{
+          .fa-bars{
+            font-size: 25px;
+          }
+        }
+      }
+      .music {
+        padding: 10px;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        top: 55%;
+        .range{
+          width: 100%;
+          height: 5px;
+          background: rgb(183, 182, 182);
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+
+        }
+        .player{
+          a{
+            padding: 10px;
+            font-size: 25px;
+          }
+          .pause-btn{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

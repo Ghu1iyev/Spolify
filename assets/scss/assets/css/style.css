@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* a {
+  color: #fff;
+}
+
+body {
+  background-color: #cdd1e0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  color: #fff;
+}
+
+main .container .card-item {
+  -webkit-box-shadow: 1px 1px 18px 0px #837f7f;
+          box-shadow: 1px 1px 18px 0px #837f7f;
+  border: none;
+  padding: 20px;
+  width: 350px;
+  height: 600px;
+  border-radius: 20px;
+  background-image: url(../../../images/1a443eb02586eba402068c7b2ce08240.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+main .container .card-item .card-nav i {
+  color: #fff;
+}
+
+main .container .card-item .card-nav .name .fa-bars {
+  font-size: 25px;
+}
+
+main .container .card-item .music {
+  padding: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  top: 55%;
+}
+
+main .container .card-item .music .range {
+  width: 100%;
+  height: 5px;
+  background: #b7b6b6;
+  -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+main .container .card-item .music .player a {
+  padding: 10px;
+  font-size: 25px;
+}
+
+main .container .card-item .music .player .pause-btn {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

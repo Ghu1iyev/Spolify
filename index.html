@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/scss/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+       <div class="container">
+        <div class="card-item">
+           <div class="card-nav d-flex justify-content-between">
+            <div class="icon">
+               <a href="javascript:void(0)"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+            <div class="name">
+                <!-- <span>Hello, Yana</span> -->
+                <a class="hamburger-menu" href=""><i class="fa-solid fa-bars"></i></i></a>
+            </div>
+           </div> 
+           <div class="music mt-5">
+            <div class="title d-flex justify-content-between">
+                <h5 class="music-info">Happier Than Ever</h5>
+                <a class="plus-btn" href=""><i class="fa-solid fa-plus"></i></a>
+            </div>
+            <div class="Name">
+                <p class="singer-name">Billie Eilish</p>
+            </div>
+            <input class="range" type="range" min="1" max="100" value="0" onchange="rangeEvent()">
+            <div class="time d-flex justify-content-between">
+                <span class="current-time">0:00</span>
+                <span class="total-duration">4:58</span>
+            </div>
+            <div class="player text-center">
+                <audio id="song" src="./assets/music/yt5s.com - Billie Eilish - Happier Than Ever (Official Music Video) (128 kbps).mp3"></audio>
+                <a class="random-music" href=""><i class="fa-solid fa-shuffle"></i></a>
+                <a class="previous-btn" href="javascript:void(0)"><i class="fa-solid fa-backward-step"></i></a>
+                <a class="play-btn" href=""><i class="fa-solid fa-circle-play"></i></a>
+                <a class="next-btn" href=""><i class="fa-solid fa-forward-step"></i></a>
+                <a class="reset-btn" href=""><i class="fa-solid fa-arrow-rotate-right"></i></a>
+            </div>
+           </div>
+        </div>
+       </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
