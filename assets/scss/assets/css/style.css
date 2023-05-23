@@ -36,17 +36,87 @@ main .container .card-item {
   -webkit-box-shadow: 1px 1px 18px 0px #837f7f;
           box-shadow: 1px 1px 18px 0px #837f7f;
   border: none;
-  padding: 20px;
   width: 350px;
   height: 600px;
   border-radius: 20px;
   background-image: url(../../../images/1a443eb02586eba402068c7b2ce08240.jpg);
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+main .container .card-item .playlist {
+  border-radius: 20px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  /* From https://css.glass */
+  background: rgba(29, 31, 49, 0.72);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid #1d1f31;
+}
+
+main .container .card-item .active {
+  width: 0;
+  left: 350px;
+  position: absolute;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+main .container .card-item .active .active-item {
+  display: none;
+  padding: 50px 20px;
+}
+
+main .container .card-item .active .active-item div {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+main .container .card-item .active .active-item div i {
+  font-size: 35px;
+}
+
+main .container .card-item .active .active-item div p {
+  margin-bottom: 0;
+}
+
+main .container .card-item .active .active-item div img {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .container .card-item .card-nav {
+  margin: 20px;
 }
 
 main .container .card-item .card-nav i {
   color: #fff;
+}
+
+main .container .card-item .card-nav .name {
+  z-index: 1;
 }
 
 main .container .card-item .card-nav .name .fa-bars {
@@ -64,7 +134,8 @@ main .container .card-item .music {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
-  top: 55%;
+  top: 51%;
+  margin: 20px;
 }
 
 main .container .card-item .music .range {

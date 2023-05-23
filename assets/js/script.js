@@ -11,9 +11,9 @@ const playIcon = document.querySelector(".fa-circle-play")
 const plusIcon = document.querySelector(".fa-plus")
 const currentTime = document.querySelector(".current-time")
 const range = document.querySelector(".range")
-const plusBtn = document.querySelector(".plus-btn")
 const hambuergerMenu = document.querySelector(".hamburger-menu")
 const randomMusic = document.querySelector(".random-music")
+
 
 let currentSongIndex = 0;
 let currentImgIndex = 0;
@@ -67,6 +67,7 @@ playBtn.addEventListener("click", (e) => {
     playIcon.setAttribute("class", "fa-solid fa-circle-play");
     song.pause();
   }
+
   
 });
 
@@ -99,6 +100,10 @@ nextBtn.addEventListener("click", (e) => {
   if(playIcon.getAttribute("class") == "fa-solid fa-circle-play"){
     playIcon.setAttribute("class", "fa-solid fa-circle-pause")
 }
+// if(randomMusic){
+//   shuffleSongs()
+//   song
+// }
   
 });
 
@@ -126,19 +131,46 @@ resetBtn.addEventListener('click', (e) => {
   currentTime.textContent = '0:00';
 }); 
 
-plusBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  if(plusIcon.getAttribute("class") == "fa-solid fa-plus"){
-    plusIcon.setAttribute("class", "fa-solid fa-check")
-  }
-  
-})
 
+const hamburgerIcon = document.querySelector('.fa-bars')
+const active = document.querySelector(".active")
+const musicList = document.querySelector('.music-list')
 hambuergerMenu.addEventListener('click', (e) => {
-  alert("Bu hələ hazır deyil qurcalama!")
+  
+  e.preventDefault()
+  
+  const cardItem = document.querySelector('.card-item')
+  cardItem.firstElementChild.classList.toggle('playlist')
+  if(active.className === "active playlist"){
+    active.style.width="100%"
+    active.style.left = "0"
+  }
+  else if(active.className==="active"){
+    active.style.width="0"
+    active.style.left = "350px"
+  }
+  const activeItem = document.querySelector(".active-item")
+  if(cardItem.firstElementChild.classList == "active playlist"){
+    setTimeout(() => {
+      activeItem.style.display = "block"
+    },2000)
+  }
+  else{
+    activeItem.style.display = "none"
+  }
+
+  if(hamburgerIcon.getAttribute('class') === "fa-solid fa-bars"){
+    hamburgerIcon.setAttribute('class', "fa-solid fa-x")
+  }else{
+    hamburgerIcon.setAttribute('class', "fa-solid fa-bars")
+  }
 })
 
-randomMusic.addEventListener('click', (e) => {
-  e.preventDefault();
-  alert("Sebrli ol bunu duzeldecem o birilere bax")
-})
+// function shuffleSongs(e){
+//   e.preventDefault()
+//   if(randomMusic){
+//     currentSongIndex = playList[Math.floor(Math.random()*playList.length)];
+//   }
+// }
+
+// randomMusic.addEventListener('click', shuffleSongs)
