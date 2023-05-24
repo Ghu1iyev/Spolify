@@ -5,15 +5,14 @@ const previousBtn = document.querySelector(".previous-btn");
 const resetBtn = document.querySelector(".reset-btn");
 const song = document.getElementById("song");
 const cardItem = document.querySelector(".card-item");
-const singerName = document.querySelector('.singer-name');
-const musicInfo = document.querySelector(".music-info")
-const playIcon = document.querySelector(".fa-circle-play")
-const plusIcon = document.querySelector(".fa-plus")
-const currentTime = document.querySelector(".current-time")
-const range = document.querySelector(".range")
-const hambuergerMenu = document.querySelector(".hamburger-menu")
-const randomMusic = document.querySelector(".random-music")
-
+const singerName = document.querySelector(".singer-name");
+const musicInfo = document.querySelector(".music-info");
+const playIcon = document.querySelector(".fa-circle-play");
+const plusIcon = document.querySelector(".fa-plus");
+const currentTime = document.querySelector(".current-time");
+const range = document.querySelector(".range");
+const hambuergerMenu = document.querySelector(".hamburger-menu");
+const randomMusic = document.querySelector(".random-music");
 
 let currentSongIndex = 0;
 let currentImgIndex = 0;
@@ -24,14 +23,12 @@ const playList = [
     singer: "Billie Eilish",
     songName: "Happier Than Ever",
     img: "1a443eb02586eba402068c7b2ce08240.jpg",
-
   },
   {
     song: "yt5s.com - The Weeknd - Save Your Tears (Official Music Video) (128 kbps).mp3",
     singer: "The Weeknd",
     songName: "Save Your Tears",
     img: "hd-the-weeknd-wallpaper-whatspaper.jpg",
-
   },
   {
     song: "yt5s.com - Arctic Monkeys - Why'd You Only Call Me When You're High_ (Official Video) (128 kbps).mp3",
@@ -47,7 +44,7 @@ const playList = [
   },
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   range.value = 0;
 });
 
@@ -55,7 +52,6 @@ const rangeEvent = () => {
   let seekTo = song.duration * (range.value / 100);
   song.currentTime = seekTo;
 };
-
 
 playBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -67,11 +63,7 @@ playBtn.addEventListener("click", (e) => {
     playIcon.setAttribute("class", "fa-solid fa-circle-play");
     song.pause();
   }
-
-  
 });
-
-
 
 song.addEventListener("timeupdate", () => {
   let currentTimeValue = Math.floor(song.currentTime);
@@ -79,7 +71,7 @@ song.addEventListener("timeupdate", () => {
 
   let minutes = Math.floor(currentTimeValue / 60);
   let seconds = currentTimeValue - minutes * 60;
-  let currentTimeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  let currentTimeString = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
   range.value = (currentTimeValue / duration) * 100;
   currentTime.textContent = currentTimeString;
@@ -95,16 +87,11 @@ nextBtn.addEventListener("click", (e) => {
   cardItem.style.backgroundImage = `url('./assets/images/${playList[currentImgIndex].img}')`;
 
   singerName.textContent = playList[currentSongIndex].singer;
-  musicInfo.textContent = playList[currentSongIndex].songName
+  musicInfo.textContent = playList[currentSongIndex].songName;
 
-  if(playIcon.getAttribute("class") == "fa-solid fa-circle-play"){
-    playIcon.setAttribute("class", "fa-solid fa-circle-pause")
-}
-// if(randomMusic){
-//   shuffleSongs()
-//   song
-// }
-  
+  if (playIcon.getAttribute("class") == "fa-solid fa-circle-play") {
+    playIcon.setAttribute("class", "fa-solid fa-circle-pause");
+  }
 });
 
 previousBtn.addEventListener("click", (e) => {
@@ -117,60 +104,65 @@ previousBtn.addEventListener("click", (e) => {
   cardItem.style.backgroundImage = `url('./assets/images/${playList[currentImgIndex].img}')`;
 
   singerName.textContent = playList[currentSongIndex].singer;
-  musicInfo.textContent = playList[currentSongIndex].songName
+  musicInfo.textContent = playList[currentSongIndex].songName;
 
-  if(playIcon.getAttribute("class") == "fa-solid fa-circle-play"){
-    playIcon.setAttribute("class", "fa-solid fa-circle-pause")
+  if (playIcon.getAttribute("class") == "fa-solid fa-circle-play") {
+    playIcon.setAttribute("class", "fa-solid fa-circle-pause");
   }
 });
 
-resetBtn.addEventListener('click', (e) => {
+resetBtn.addEventListener("click", (e) => {
   e.preventDefault();
   song.currentTime = 0;
   range.value = 0;
-  currentTime.textContent = '0:00';
-}); 
+  currentTime.textContent = "0:00";
+});
 
+const hamburgerIcon = document.querySelector(".fa-bars");
+const active = document.querySelector(".active");
+const musicList = document.querySelector(".music-list");
+hambuergerMenu.addEventListener("click", (e) => {
+  e.preventDefault();
 
-const hamburgerIcon = document.querySelector('.fa-bars')
-const active = document.querySelector(".active")
-const musicList = document.querySelector('.music-list')
-hambuergerMenu.addEventListener('click', (e) => {
-  
-  e.preventDefault()
-  
-  const cardItem = document.querySelector('.card-item')
-  cardItem.firstElementChild.classList.toggle('playlist')
-  if(active.className === "active playlist"){
-    active.style.width="100%"
-    active.style.left = "0"
+  const cardItem = document.querySelector(".card-item");
+  cardItem.firstElementChild.classList.toggle("playlist");
+  if (active.className === "active playlist") {
+    active.style.width = "100%";
+    active.style.left = "0";
+  } else if (active.className === "active") {
+    active.style.width = "0";
+    active.style.left = "350px";
   }
-  else if(active.className==="active"){
-    active.style.width="0"
-    active.style.left = "350px"
-  }
-  const activeItem = document.querySelector(".active-item")
-  if(cardItem.firstElementChild.classList == "active playlist"){
+  const activeItem = document.querySelector(".active-item");
+  if (cardItem.firstElementChild.classList == "active playlist") {
     setTimeout(() => {
-      activeItem.style.display = "block"
-    },2000)
-  }
-  else{
-    activeItem.style.display = "none"
+      activeItem.style.display = "block";
+    }, 2000);
+  } else {
+    activeItem.style.display = "none";
   }
 
-  if(hamburgerIcon.getAttribute('class') === "fa-solid fa-bars"){
-    hamburgerIcon.setAttribute('class', "fa-solid fa-x")
-  }else{
-    hamburgerIcon.setAttribute('class', "fa-solid fa-bars")
+  if (hamburgerIcon.getAttribute("class") === "fa-solid fa-bars") {
+    hamburgerIcon.setAttribute("class", "fa-solid fa-x");
+  } else {
+    hamburgerIcon.setAttribute("class", "fa-solid fa-bars");
   }
-})
+});
 
-// function shuffleSongs(e){
-//   e.preventDefault()
-//   if(randomMusic){
-//     currentSongIndex = playList[Math.floor(Math.random()*playList.length)];
-//   }
-// }
+randomMusic.addEventListener("click", (e) => {
+  e.preventDefault();
+  const randomIndex = Math.floor(Math.random() * playList.length);
+  const randomSong = playList[randomIndex];
+  song.src = `./assets/music/${randomSong.song}`
+  song.play();
 
-// randomMusic.addEventListener('click', shuffleSongs)
+  currentImgIndex = randomIndex;
+  cardItem.style.backgroundImage = `url('./assets/images/${randomSong.img}')`;
+
+  singerName.textContent = randomSong.singer;
+  musicInfo.textContent = randomSong.songName;
+
+  
+});
+
+
